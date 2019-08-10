@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="~/Content/Assets/Images/icon.png" />
+
+    <title>SSS System - @ViewBag.Title</title>
+    <link href="~/Content/Chosen/chosen.css" rel="stylesheet" />
+
+    @Html.Partial("_mainCss")
+    @Html.Partial("_mainJs")
+
+</head>
+
+<body>
+
+    @Html.Partial("_mainnav")
+
+    <div class="page-content">
+        @Html.Partial("_mainsidebar")
+
+        <div class="content-wrapper">
+            @Html.Partial("_pageheader")
+        <div class="content">
+        <!-- Form inputs -->
+        <div class="card">
+            <div class="card-body">
+
+
+            @RenderBody()
+            </div>
+        </div>
+        </div>
+
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

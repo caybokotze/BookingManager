@@ -1,0 +1,67 @@
+﻿@model REM.Models.Venue
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueCapacity.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueCapacity.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenuePrices.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenuePrices.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

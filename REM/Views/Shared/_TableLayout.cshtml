@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="~/Content/Assets/Images/icon.png" />
+    <title>SSS System - @ViewBag.Title</title>
+    @*@Styles.Render("~/Content/global")
+        @Styles.Render("~/Content/css")
+
+        @Scripts.Render("~/content/corejs")
+        @Scripts.Render("~/content/themejs")
+        @Scripts.Render("~/content/appjs")*@
+
+    @Html.Partial("_mainCss")
+    @Html.Partial("_mainJs")
+
+</head>
+
+<body>
+
+    @Html.Partial("_mainnav")
+
+    <div class="page-content">
+        @Html.Partial("_mainsidebar")
+
+        <div class="content-wrapper">
+            @Html.Partial("_pageheader")
+            <div class="content">
+
+                <div class="card">
+                    <div class="card-header header-elements-inline">
+                        <h5 class="card-title">
+                            
+                            @Html.ActionLink("Create New", "Create", null, new {id="linkRedirect"})
+
+                            @*@if (ViewData["Controller"] == null
+                                 || ViewData["Action"] == null)
+                            {
+                                <a href="#" id="linkRedirect">Create New</a>
+
+                                <script>
+                                    var doc = document.getElementById("linkRedirect");
+                                    doc.onclick = function() {
+                                        window.alert(
+                                            "This link is currently inactive. Please navigate to the required action manually or contact the IT support team to fix the problem.");
+                                    }
+                                </script>
+                            }
+                            else
+                            {
+                                <a href="~/@ViewData["Controller"]/@ViewData["Action"]">Create New</a>
+                            }*@
+
+                        </h5>
+                        <div class="header-elements">
+                            <div class="list-icons">
+                                <a class="list-icons-item" data-action="collapse"></a>
+                                <a class="list-icons-item" data-action="reload"></a>
+                                <a class="list-icons-item" data-action="remove"></a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="table-responsive">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

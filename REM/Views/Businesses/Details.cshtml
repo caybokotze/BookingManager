@@ -1,0 +1,59 @@
+﻿@model REM.Models.Business
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Business</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VatNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VatNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusinessNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

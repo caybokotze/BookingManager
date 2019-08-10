@@ -1,0 +1,106 @@
+﻿@using REM.Core.Domain
+@model Booking
+
+@{
+    ViewBag.Title = "RoomView";
+    Layout = "~/Views/Shared/_ContentGrid.cshtml";
+}
+<style>
+
+    .fixed-width {
+        width: 13rem;
+    }
+
+    .fixed-width-3 {
+        width: 36rem;
+    }
+
+    .fixed-width-2 {
+        width: 23rem;
+    }
+
+    .fixed-width-1 {
+        width: 10rem;
+    }
+
+</style>
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h5 class="card-title">View Room Status</h5>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+                <a class="list-icons-item" data-action="remove"></a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <button type="button" class="btn btn-light btn-ladda btn-ladda-spinner" data-style="expand-left" data-spinner-color="#333" data-spinner-size="20">
+            <span class="ladda-label">Previous</span>
+        </button>
+        <button type="button" class="btn btn-light btn-ladda btn-ladda-spinner" data-style="expand-left" data-spinner-color="#333" data-spinner-size="20">
+            <span class="ladda-label">Next</span>
+        </button>
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-lg">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-center fixed-width">
+                        @DateTime.Now.Date.ToShortDateString()<br>
+                        <span class="font-weight-normal text-muted"><a href="#">Thursday</a></span>
+                    </th>
+                    <th class="text-center fixed-width">
+                        @DateTime.Now.AddDays(1).Date.ToShortDateString()<br>
+                        <span class="font-weight-normal text-muted"><a href="#">Friday</a></span>
+                    </th>
+                    <th class="text-center fixed-width">
+                        @DateTime.Now.AddDays(2).Date.ToShortDateString()<br>
+                        <span class="font-weight-normal text-muted"><a href="#">Saturday</a></span>
+                    </th>
+                    <th class="text-center fixed-width">
+                        @DateTime.Now.AddDays(3).Date.ToShortDateString()<br>
+                        <span class="font-weight-normal text-muted"><a href="#">Sunday</a></span>
+                    </th>
+                    <th class="text-center fixed-width">
+                        @DateTime.Now.AddDays(4).Date.ToShortDateString()<br>
+                        <span class="font-weight-normal text-muted"><a href="#">Monday</a></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="text-nowrap" scope="row">Room 1<br/><span class="text-blue">Office Room</span></th>
+                    <td class="text-center"><button class="btn btn-danger rounded-round btn-sm fixed-width-1">Joseph</button><br/><span><a href="#">+ 1 More</a></span></td>
+                    <td class="text-center"><button class="btn btn-warning rounded-round fixed-width-1">Maintenance</button></td>
+                    <td class="text-center"><button class="btn btn-success rounded-round fixed-width-1">Available</button></td>
+                    <td class="text-center"><button class="btn btn-success rounded-round fixed-width-1">Available</button></td>
+                    <td class="text-center"><button class="btn btn-success rounded-round fixed-width-1">Available</button></td>
+                </tr>
+                
+                <tr>
+                    <th class="text-nowrap" scope="row">Room 2</th>
+                    <td class="text-center"><button class="btn btn-danger rounded-round fixed-width-1">Joseph</button></td>
+                    <td class="text-center"><button class="btn btn-warning rounded-round fixed-width-1">Maintenance</button></td>
+                    <td class="text-center"><button class="btn btn-info rounded-round fixed-width-1">Cleaning</button></td>
+                    <td colspan="2" class="text-center"><button class="btn btn-success rounded-round fixed-width-2">Available</button></td>
+                    
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Room 3</th>
+                    <td class="text-center"><button class="btn btn-danger rounded-round">Joseph</button></td>
+                    <td class="text-center"><button class="btn btn-warning rounded-round">Maintenance</button></td>
+                    <td colspan="3" class="text-center"><button class="btn btn-success rounded-round fixed-width-3" >Available</button></td>
+                    
+                </tr>
+                
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
